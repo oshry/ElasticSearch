@@ -1,0 +1,25 @@
+{
+  "name": "Search",
+  "version": "0.0.0",
+  "keywords": [
+    "test"
+  ],
+  "authors": [
+    "Oshry Levy"
+  ],
+  "license": "MIT",
+  "homepage": "index.html",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "assets/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "mustache": "~2.0.0",
+    "bootstrap": "~3.3.4"
+  }
+}

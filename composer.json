@@ -1,0 +1,21 @@
+{
+    "name": "oshry/cars",
+    "description": "cars API",
+    "require": {
+        "mustache/mustache": "2.7.0"
+    },
+    "require-dev": {
+        "phpspec/phpspec": "~2.1"
+    },
+    "authors": [
+        {
+            "name": "Oshry Levy",
+            "email": "oshrylevy@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Search\\": "src/Search/"
+        }
+    }
+}

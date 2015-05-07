@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Search</title>
+    <script src="assets/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="assets/vendor/mustache/mustache.min.js"></script>
+    <script src="assets/js/scripts.js"></script>
+    <link rel="stylesheet" href="assets/vendor/bootstrap/dist/css/bootstrap.min.css"/>
+    <!--<link rel="stylesheet" href="assets/vendor/bootstrap/dist/css/bootstrap-theme.min.css"/>-->
+    <link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body>
+
+<div class="row">
+    <div class="col-md-3 col-md-offset-5">
+        <form class="form-horizontal" >
+            <div class="form-group">
+                <label for="search_box" class="control-label pull-right"><h1>חפש חבר</h1></label>
+                <input type="text" id="search_box" name="nameInput"
+                       class="form-control input-normal" placeholder="Search"
+                       onkeyup="Search.Contacts.Search(this)"/>
+            </div>
+        </form>
+
+        <ul id="search_results" class="list-group"></ul>
+        <script type="mustache/x-tmpl" id="name_matches_tmpl">
+          {{#matches}}
+          <li class="list-group-item">{{full_name}}: birthday in {{time_to_bday}} days</li>
+          {{/matches}}
+          {{^matches}}
+          <li><em>No matches found </em></li>
+          {{/matches}}
+        </script>
+
+        <h2 class="pull-right">ימי הולדת קרובים</h2>
+        <ul id="bdays" class="clearfix list-group"></ul>
+        <script type="mustache/x-tmpl" id="bday_matches_tmpl">
+          {{#matches}}
+          <li class="list-group-item">{{Id}}  {{fname}} {{lname}}({{bday}}) Have Birthday Soon</li>
+          {{/matches}}
+          {{^matches}}
+          <li class="list-group-item"><em>No matches found </em></li>
+          {{/matches}}
+        </script>
+    </div>
+</div>
+    <script>
+    $(document).ready(function(){
+        Search.Contacts.Init();
+    });
+</script>
+</body>
+</html>
